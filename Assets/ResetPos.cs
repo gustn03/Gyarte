@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ResetPos : MonoBehaviour
 {
-    public float originalX;
-    public float originalY;
+    private float originalX;
+    private float originalY;
     void Start()
     {
         originalX = transform.position.x;
@@ -13,7 +13,7 @@ public class ResetPos : MonoBehaviour
     }
      void Update()
     {
-        if (transform.position.y < -10f)
+        if (transform.position.y < -15f)
         {
             transform.position = new Vector3(originalX, originalY, transform.position.z);
         }   

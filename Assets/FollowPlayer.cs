@@ -5,15 +5,19 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
-    private float camStartpos;
+    private float camStartposX;
+    private float camStartposY;
+    public float delay;
     void start()
     {
-        camStartpos = transform.position.x;
+        camStartposX = transform.position.x;
+        camStartposY = transform.position.y;
     }
     void Update()
     {
-        float playerPos = (player.transform.position.x);
+        float playerPosX = (player.transform.position.x * delay);
+        float playerPosY = (player.transform.position.y);
 
-        transform.position = new Vector3(camStartpos + playerPos, transform.position.y, transform.position.z);
+        transform.position = new Vector3(camStartposX + playerPosX, camStartposY + playerPosY, transform.position.z);
     }
 }
